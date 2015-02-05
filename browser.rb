@@ -21,9 +21,9 @@ else
   name = gets.chomp
   print "Enter email: "
   email = gets.chomp
-  request = "PUT /path/script.rb HTTP/1.0\n"
+  request = "PUT /thanks.html HTTP/1.0\n"
   body = { :viking => { :name => name, :email => email} }.to_json + "\r\n\r\n"
-  puts body
+  #puts body
   header = "From: david@mail.com\n"
   header << "User-Agent: HTTPTool/1.0\n"
   header << "Content-Type: application/x-www-form-urlencoded\n"
@@ -39,7 +39,7 @@ response = socket.read              # Read complete response
 headers,body = response.split("\r\n\r\n", 2) 
 method = headers.split[0]
 status = headers.split[1]
-puts method
+#puts method
 if status =~ /404/
   puts "Error: 404 Received. File Not Found"
 elsif status =~ /200/
