@@ -7,7 +7,7 @@ loop {                         # Servers run forever
   # breaks when it receives /r/n/r/n, but what if that never happens, no timeout
   header = ''
   loop do
-    puts "Inside header loop" #looks like the header is being received here
+    #puts "Inside header loop" #looks like the header is being received here
     header << client.gets
     break if header =~ /\r\n\r\n$/
   end
